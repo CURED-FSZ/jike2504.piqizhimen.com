@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="为西邮计科2504班级提供的网站">
+    <link rel="shortcut icon" href="/images/favicon.png">
+    <title>
+        西邮计科2504 --<%= typeof title !== 'undefined' ? title : '默认标题' %>
+    </title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- 导航栏 -->
+<nav class="navigation">
+    <div class="top">
+        <img class=top-left" src="/images/校名校徽.png" alt="" width="400px" height="80px">
+        <header class="header">
+            <h1>计算机科学与技术专业2504班级网站(试做)</h1>
+        </header>
+    </div>
+    <ul>
+        <li><a href="#" data-page="home" class="nav-link active">班级视窗</a></li>
+        <li><a href="#" data-page="manage" class="nav-link">管理公开</a></li>
+        <li><a href="#" data-page="important" class="nav-link">重要事项</a></li>
+        <li><a href="#" data-page="feedback" class="nav-link">匿名反馈</a></li>
+    </ul>
+</nav>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="/javascripts/person.js"></script>
+</body>
+
+</html>

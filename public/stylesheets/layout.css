@@ -1,0 +1,141 @@
+@import url('./variables.css');
+
+/* ==========================================================================
+   导航栏样式
+   ========================================================================== */
+
+.navigation {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 500;
+}
+
+.top {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 25px;
+  margin-bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+}
+
+.top-left {
+  padding: 10px;
+  left: 0;
+}
+
+.header {
+  position: absolute;
+  right: 10px;
+  padding: 15px;
+  text-align: center;
+  transition: padding 0.3s ease;
+}
+
+.header h1 {
+  margin: 0;
+  padding: 10px;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+/* 导航菜单 */
+.navigation ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigation li {
+  margin: 0 10px;
+}
+
+.nav-link {
+  color: var(--secondary-color);
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  transition: all var(--transition-speed) ease;
+  font-weight: 500;
+  display: inline-block;
+  user-select: none;
+}
+
+.nav-footer-link {
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: var(--border-radius);
+  transition: all var(--transition-speed) ease;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.nav-link:hover,
+.nav-footer-link:hover {
+  background-color: var(--text-color);
+  color: white;
+}
+
+.nav-link.active {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+/* ==========================================================================
+   页面内容区域
+   ========================================================================== */
+
+.content {
+  padding: 180px 0 50px;
+  min-height: calc(100vh - 100px);
+  position: relative;
+}
+
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  opacity: 0;
+  display: none;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+  width: 100%;
+  top: 180px;
+  left: 0;
+  right: 0;
+  padding: 0 20px;
+}
+
+.page.visible {
+  opacity: 1;
+  display: block;
+  transform: translateY(0);
+  position: relative;
+  top: auto;
+}
+
+/* 页脚 */
+.footer {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.footer a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+
+.footer a:hover {
+  color: #A9A9A9;
+  text-decoration: underline;
+}

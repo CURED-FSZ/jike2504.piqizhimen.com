@@ -1,0 +1,80 @@
+/**
+ * 模块依赖
+ * - app: 引入Express应用实例
+ * - debug: 调试工具，用于输出服务器相关日志
+ * - http: Node.js内置HTTP模块，用于创建HTTP服务器
+ */
+var app = require('../app');
+var http = require('http');
+
+/**
+ * 从环境变量获取端口号，如果环境变量中没有设置，则使用默认端口3000
+ * 并将端口号设置到Express应用中
+ */
+var port = normalizePort(process.env.PORT || '2504');
+app.set('port', port);
+
+/**
+ * 创建HTTP服务器
+ * 使用Express应用实例app作为请求处理函数
+ */
+var server = http.createServer(app);
+
+/**
+ * 让服务器开始监听指定端口
+ * 监听所有网络接口上的连接
+ * 同时设置错误事件和监听事件的处理函数
+ */
+server.listen(port);
+server.on('error', onError);
+
+/**
+ * 标准化端口号
+ * 将输入的端口值转换为数字、字符串或false
+ * @param {string|number} val - 输入的端口值
+ * @returns {number|string|boolean} - 标准化后的端口值
+ *   - 如果是有效的数字端口号，返回数字
+ *   - 如果是命名管道，返回字符串
+ *   - 如果无效，返回false
+ */
+function normalizePort(val) {
+  var port = parseInt(val, 10);
+  if (isNaN(port)) {
+    // 命名管道
+    return val;
+  }
+  if (port >= 0) {
+    // 有效端口号
+    return port;
+  }
+  return false;
+}
+
+/**
+ * HTTP服务器错误事件监听器
+ * 处理服务器启动和监听过程中的错误
+ * @param {Error} error - 错误对象
+ */
+function onError(error) {
+  if (error.syscall !== 'listen') {
+    // 如果不是listen相关的错误，则直接抛出
+    throw error;
+  }
+  // 根据端口类型格式化绑定信息
+  var bind = typeof port === 'string'
+    ? 'Pipe ' + port
+    : 'Port ' + port;
+  // 处理特定的监听错误
+  switch (error.code) {
+    case 'EACCES':
+      console.error(bind + ' 需要管理员权限');
+      process.exit(1);
+      break;
+    case 'EADDRINUSE':
+      console.error(bind + ' 已被占用');
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+}

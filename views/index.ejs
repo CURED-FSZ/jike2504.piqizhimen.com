@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="为西邮计科2504班级提供的网站">
+  <link rel="shortcut icon" href="/images/favicon.png">
+  <title>
+    西邮计科2504
+  </title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- 导航栏 -->
+  <nav class="navigation">
+      <div class="top">
+          <img class=top-left" src="/images/校名校徽.png" alt="" width="400px" height="80px">
+          <header class="header">
+              <h1>计算机科学与技术专业2504班级网站(试做)</h1>
+          </header>
+      </div>
+    <ul>
+      <li data-page="home" class="nav-link active">班级视窗</li>
+      <li data-page="manage" class="nav-link">管理公开</li>
+      <li data-page="important" class="nav-link">重要事项</li>
+      <li data-page="feedback" class="nav-link">匿名反馈</li>
+    </ul>
+  </nav>
+
+  <!-- 主要内容区域 -->
+  <div class="content">
+    <!-- 班级视窗 -->
+    <div id="home" class="page visible">
+      <div class="welcome-card">
+        <h2>欢迎来到计科2504</h2>
+        <p>这是一个试验性质的网站，我们正在不断改进和完善功能。</p>
+        <div class="features" style="display: flex; justify-content: space-around; margin-top: 2rem;">
+          <div class="feature-item">
+              <img src="/images/sucai.png" alt="">
+          </div>
+            <div class="feature-item">
+                <img src="/images/sucai.png" alt="">
+            </div>
+            <div class="feature-item">
+                <img src="/images/sucai.png" alt="">
+            </div>
+        </div>
+      </div>
+        <div class="welcome-card">
+            <h2>课程表</h2>
+            <div class="table-container">
+            <table>
+                <thead>
+                <tr>
+                    <th>节</th>
+                    <th>周一</th>
+                    <th>周二</th>
+                    <th>周三</th>
+                    <th>周四</th>
+                    <th>周五</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1~2</td>
+                    <td>高等数学A1</td>
+                    <td></td>
+                    <td>高等数学A1</td>
+                    <td>计算机科学导论</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>3~4</td>
+                    <td>中国近现代史纲要</td>
+                    <td>C语言实践与提高</td>
+                    <td>大学生安全教育</td>
+                    <td>大学生职业生涯规划</td>
+                    <td>高等数学A1</td>
+                </tr>
+                <tr>
+                    <td>5~6</td>
+                    <td></td>
+                    <td>大学体育1</td>
+                    <td>大学英语C1</td>
+                    <td></td>
+                    <td>大学英语C1</td>
+                </tr>
+                <tr>
+                    <td>7~8</td>
+                    <td></td>
+                    <td>大学美育</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>9~11</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+        <div class="welcome-card">
+            <h2>我们的成员</h2>
+            <div class="features" style="display: flex; justify-content: space-around; margin-top: 2rem;">
+                <a href="person?title=汪超" target="_blank">
+                <div class="feature-item">
+
+                    <h3>指导员</h3>
+                    <a>汪超老师</a>
+
+                </div>
+                </a>
+                <div class="feature-item">
+                    <h3>班长</h3>
+                    <a>XXX</a>
+                </div>
+                <div class="feature-item">
+                    <h3>团支部书记</h3>
+                    <a>XXX</a>
+                </div>
+                <div class="feature-item">
+                    <h3>学习委员</h3>
+                    <a>XXX</a>
+                </div>
+                <div class="feature-item">
+                    <h3>生活委员</h3>
+                    <a>XXX</a>
+                </div>
+                <div class="feature-item">
+                    <h3>文体委员</h3>
+                    <a>XXX</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 管理公开页面 -->
+    <div id="manage" class="page hidden">
+        <div class="welcome-card">
+            <h2>班费公开</h2>
+            <p>再此公开班费动向</p>
+            <div class="features" style="display: flex; justify-content: space-around; margin-top: 2rem;">
+                <h1 style="align-content: center;color:var(--primary-color)">余额：114514￥</h1>
+                <div class="feature-item">
+                    <p>最新动向：老八直播打赏（+114514￥）</p>
+                </div>
+            </div>
+        </div>
+        <div class="welcome-card">
+            <h2>投票活动</h2>
+            <div class="features" style="display: flex; justify-content: space-around; margin-top: 2rem;">
+                <div class="feature-item">
+                    <h3>勤奋学员投票：</h3>
+                    <p>XXX：我上早八！</p>
+                </div>
+                <div class="feature-item">
+                    <h3>诚实之星投票：</h3>
+                    <p>XXX：艾玛真香！</p>
+                </div>
+                <div class="feature-item">
+                    <h3>劳动之星投票：</h3>
+                    <p>XXX：我每天打扫30遍宿舍！</p>
+                </div>
+            </div>
+        </div>
+        <div class="welcome-card">
+            <h2>班务公开</h2>
+            <div class="features" style="display: flex; justify-content: space-around; margin-top: 2rem;">
+                <div class="feature-item">
+                    <h3>不知道该写啥</h3>
+                    <p>阿巴阿巴阿巴</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 重要事项 -->
+    <div id="important" class="page hidden">
+      <h2>重要事项</h2>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>编号</th>
+              <th>内容</th>
+              <th>文件</th>
+              <th>日期</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                03
+              </td>
+              <td>
+                老师要求早自习不迟到
+              </td>
+              <td>无</td>
+              <td>
+                2025.13.35
+              </td>
+            </tr>
+            <tr>
+                <td>
+                    02
+                </td>
+                <td>
+                    老师发的的C语言课件，都可以下载下载
+                </td>
+                <td>（C语言课件.pdf）</td>
+                <td>
+                    2025.9.31
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    01
+                </td>
+                <td>
+                    嗨嗨嗨，我们来辣！
+                </td>
+                <td>无</td>
+                <td>
+                    2025.8.31
+                </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 留言页 -->
+    <div id="feedback" class="page hidden">
+      <div class="message-container">
+        <h2>匿名反馈</h2>
+        <p class="message-description">我们重视您的每一条反馈，但机能有限，请不要发送垃圾信息</p>
+        <form action="/api/message" method="post" class="message-form">
+          <input type="hidden" name="csrf_token" value="<%= csrf_token || '' %>">
+          <div class="form-group">
+            <label for="name">标题</label>
+            <input type="text" id="name" name="name" required placeholder="更好的标题有助于我们注意到您的消息">
+            <div class="input-border"></div>
+          </div>
+          <div class="form-group">
+            <label for="comments">留言内容 <span class="char-count">(0/1000)</span></label>
+            <textarea id="comments" name="comments" rows="6" required maxlength="1000" placeholder="请输入您的留言内容，最多1000字"
+              aria-label="输入留言内容"></textarea>
+            <div class="input-border"></div>
+            <span class="error">留言内容不能为空</span>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="submit-btn" aria-label="提交留言">提交留言</button>
+            <button type="reset" class="reset-btn" aria-label="重置表单">重置内容</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <section id="success" class="page hidden">
+    <h2>留言提交成功</h2>
+    <p>感谢您的反馈！我们会尽快处理。</p>
+    <button class="back-to-home">返回主页</button>
+  </section>
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div>
+      <p>&nbsp;</p>
+      <p>官方邮箱：pqzm_official@163.com &nbsp; 备案号：<a href="https://beian.miit.gov.cn/#/Integrated/index"
+          target="_blank">陕ICP备2023019725号-1</a></p>
+      <p>&nbsp</p>
+        <p>&nbsp</p>
+        <p>友情链接：</p>
+        <p><a href="https://www.xiyou.edu.cn/" target="_blank">西安邮电大学官方网站</a>&nbsp&nbsp&nbsp
+            <a href="http://cs.xupt.edu.cn:81/xiyoucs/index.asp" target="_blank">西安邮电大学计算机学院</a>&nbsp&nbsp&nbsp
+            <a href="https://wiki.cooo.site/" target="_blank">西安邮电大学wiki百科</a>
+        </p>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="/javascripts/main.js"></script>
+</body>
+
+</html>
