@@ -56,10 +56,14 @@
 
 4. **启动服务器**：
    ```bash
-   npm start  # 或 node app.js
+   #在控制台运行以下命令
+   npm ./bin/www
    ```
-   - 访问 `http://localhost:4000`。
+   - 在浏览器里访问 `http://localhost:4000`。
    - 留言测试：POST `/api/message` { "name": "标题", "comments": "内容" }。
+  
+   - *注意：*
+   - 当您在本地环境运行该项目时，某些（大部分）api接口将不可用！
 
 ### 开发模式
 ```bash
