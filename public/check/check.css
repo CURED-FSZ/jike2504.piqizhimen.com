@@ -1,0 +1,57 @@
+body {
+    font-family: 'Noto Sans SC', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    color: #699CF0;
+    text-align: center;
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+}
+
+.list li {
+    padding: 10px;
+    margin: 10px 0;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s;
+    text-align: center;
+}
+
+.list li:hover {
+    background: #e0f7fa;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background: #699CF0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: #3f78bf;
+}

@@ -1,35 +1,222 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="为西邮计科2504班级提供的网站">
-    <link rel="shortcut icon" href="/images/favicon.png">
-    <title>
-        西邮计科2504 --<%= typeof title !== 'undefined' ? title : '默认标题' %>
-    </title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
+    <meta name="description" content="汪超老师个人主页 - 西邮计科2504">
+    <link rel="shortcut icon" href="../images/favicon.png">
+    <title>汪超老师 - 西邮计科2504</title>
+    <link rel="stylesheet" href="../stylesheets/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 <!-- 导航栏 -->
 <nav class="navigation">
     <div class="top">
-        <img class=top-left" src="/images/校名校徽.png" alt="" width="400px" height="80px">
-        <header class="header">
-            <h1>计算机科学与技术专业2504班级网站(试做)</h1>
-        </header>
+        <img class="top-left" src="../images/校名校徽.png" alt="">
+        <h1 class="header">个人主页</h1>
     </div>
-    <ul>
-        <li><a href="#" data-page="home" class="nav-link active">班级视窗</a></li>
-        <li><a href="#" data-page="manage" class="nav-link">管理公开</a></li>
-        <li><a href="#" data-page="important" class="nav-link">重要事项</a></li>
-        <li><a href="#" data-page="feedback" class="nav-link">匿名反馈</a></li>
-    </ul>
 </nav>
+<!-- 主要内容区域 -->
+<div class="content">
+    <!-- 基本信息页面 -->
+    <div id="profile" class="page visible">
+        <div class="welcome-card" style="max-width: 800px; margin: 0 auto;">
+            <div style="display: flex; justify-content: center; margin-bottom: 2rem;">
+                <div style="text-align: center;">
+                    <img src="" alt="汪超老师" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 4px solid var(--primary-color); margin-bottom: 1rem;">
+                    <h2 style="color: var(--primary-color);">汪超老师</h2>
+                    <p style="font-size: 1.2rem; color: #666;">计算机科学与技术专业 指导员</p>
+                </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
+                <div class="feature-item" style="flex: 1; min-width: 200px; margin: 0.5rem;">
+                    <h3>教育背景</h3>
+                    <p>西安电子科技大学</p>
+                    <p style="font-size: 0.9rem;">计算机科学与技术 博士</p>
+                </div>
+                <div class="feature-item" style="flex: 1; min-width: 200px; margin: 0.5rem;">
+                    <h3>研究方向</h3>
+                    <p>人工智能与机器学习</p>
+                    <p style="font-size: 0.9rem;">数据挖掘与分析</p>
+                </div>
+                <div class="feature-item" style="flex: 1; min-width: 200px; margin: 0.5rem;">
+                    <h3>教学经验</h3>
+                    <p>15年高校教学经验</p>
+                    <p style="font-size: 0.9rem;">指导学生获得多项竞赛奖项</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="welcome-card" style="max-width: 800px; margin: 2rem auto;">
+            <h2>个人简介</h2>
+            <p style="line-height: 1.8; text-indent: 2em;">
+                汪超老师毕业于西安电子科技大学计算机科学与技术专业，获博士学位。现任西安邮电大学计算机学院教师，主要从事人工智能、机器学习、数据挖掘等领域的教学与研究工作。拥有15年的高校教学经验，主讲《人工智能导论》、《机器学习》、《数据挖掘》等课程，教学风格深入浅出，深受学生喜爱。
+            </p>
+            <p style="line-height: 1.8; text-indent: 2em;">
+                作为计科2504班的指导员，汪老师不仅关注学生的学业发展，更注重学生的全面成长。他经常组织各类学术讲座和实践活动，帮助学生拓展视野，提升综合能力。在他的指导下，班级同学多次在各类竞赛中取得优异成绩。
+            </p>
+        </div>
+
+        <div class="welcome-card" style="max-width: 800px; margin: 2rem auto;">
+            <h2>教学理念</h2>
+            <div class="feature-item" style="margin-bottom: 1rem;">
+                <h3>以学生为中心</h3>
+                <p>关注每位学生的成长需求，因材施教，帮助学生找到适合自己的学习方法和发展方向。</p>
+            </div>
+            <div class="feature-item" style="margin-bottom: 1rem;">
+                <h3>理论与实践并重</h3>
+                <p>注重理论知识的传授，同时强调实践能力的培养，鼓励学生参与科研项目和竞赛活动。</p>
+            </div>
+            <div class="feature-item">
+                <h3>创新思维培养</h3>
+                <p>激发学生的创新意识，培养批判性思维和解决问题的能力，为未来的学术或职业发展奠定基础。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 授课内容页面 -->
+    <div id="courses" class="page visible">
+        <div class="welcome-card">
+            <h2>主讲课程</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>课程名称</th>
+                        <th>课程性质</th>
+                        <th>学时</th>
+                        <th>授课对象</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>人工智能导论</td>
+                        <td>专业必修课</td>
+                        <td>48学时</td>
+                        <td>计算机科学与技术专业 大三</td>
+                    </tr>
+                    <tr>
+                        <td>机器学习</td>
+                        <td>专业选修课</td>
+                        <td>32学时</td>
+                        <td>计算机科学与技术专业 大三</td>
+                    </tr>
+                    <tr>
+                        <td>数据挖掘</td>
+                        <td>专业选修课</td>
+                        <td>32学时</td>
+                        <td>计算机科学与技术专业 大四</td>
+                    </tr>
+                    <tr>
+                        <td>Python程序设计</td>
+                        <td>专业基础课</td>
+                        <td>64学时</td>
+                        <td>计算机科学与技术专业 大二</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    <!-- 联系方式页面 -->
+    <div id="contact" class="page hidden">
+        <div class="welcome-card" style="max-width: 600px; margin: 0 auto;">
+            <h2>联系方式</h2>
+            <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
+                <div class="feature-item" style="flex: 1; min-width: 200px; margin: 0.5rem;">
+                    <h3>办公室</h3>
+                    <p>计算机学院楼 301室</p>
+                    <p style="font-size: 0.9rem;">工作日 8:00-12:00, 14:00-18:00</p>
+                </div>
+                <div class="feature-item" style="flex: 1; min-width: 200px; margin: 0.5rem;">
+                    <h3>电子邮箱</h3>
+                    <p>wangchao@xiyou.edu.cn</p>
+                    <p style="font-size: 0.9rem;">24小时内回复</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="welcome-card" style="max-width: 600px; margin: 2rem auto;">
+            <h2>答疑时间</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>时间</th>
+                        <th>地点</th>
+                        <th>备注</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>周一 14:30-16:30</td>
+                        <td>计算机学院楼 301室</td>
+                        <td>常规答疑</td>
+                    </tr>
+                    <tr>
+                        <td>周三 10:00-12:00</td>
+                        <td>计算机学院楼 301室</td>
+                        <td>常规答疑</td>
+                    </tr>
+                    <tr>
+                        <td>周五 16:00-18:00</td>
+                        <td>计算机学院楼 301室</td>
+                        <td>常规答疑</td>
+                    </tr>
+                    <tr>
+                        <td>预约其他时间</td>
+                        <td>可协商</td>
+                        <td>请提前邮件联系</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="welcome-card" style="max-width: 600px; margin: 2rem auto;">
+            <h2>在线交流平台</h2>
+            <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
+                <div class="person-card" style="margin: 1rem;">
+                    <h3>课程QQ群</h3>
+                    <p>123456789</p>
+                    <p style="font-size: 0.9rem; color: #666;">课程通知与答疑</p>
+                </div>
+                <div class="person-card" style="margin: 1rem;">
+                    <h3>微信学习群</h3>
+                    <p>请扫描二维码加入</p>
+                    <p style="font-size: 0.9rem; color: #666;">日常学习交流</p>
+                </div>
+                <div class="person-card" style="margin: 1rem;">
+                    <h3>学习通平台</h3>
+                    <p>搜索课程名称</p>
+                    <p style="font-size: 0.9rem; color: #666;">在线学习资源</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- 页脚 -->
+<footer class="footer">
+    <div>
+        <p>&nbsp;</p>
+        <p>官方邮箱：pqzm_official@163.com &nbsp; 备案号：<a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank">陕ICP备2023019725号-1</a></p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>友情链接：</p>
+        <p><a href="https://www.xiyou.edu.cn/" target="_blank">西安邮电大学官方网站</a>&nbsp;&nbsp;&nbsp;
+            <a href="http://cs.xupt.edu.cn:81/xiyoucs/index.asp" target="_blank">西安邮电大学计算机学院</a>&nbsp;&nbsp;&nbsp;
+            <a href="https://wiki.cooo.site/" target="_blank">西安邮电大学wiki百科</a>
+        </p>
+    </div>
+</footer>
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="/javascripts/person.js"></script>
+<script src="../javascripts/person.js"></script>
 </body>
 
 </html>

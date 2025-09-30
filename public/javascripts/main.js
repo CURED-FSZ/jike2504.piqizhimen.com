@@ -1,119 +1,197 @@
-// 等待DOM加载完成后执行代码
 $(document).ready(function () {
+    // 留言表单处理
+    const $form = $('.message-form');
+    const $textarea = $('#comments');
+    const $charCount = $('.char-count');
+    const $error = $('.error');
+    const titleInput = $('#title');
+    const popup = $("#popup");
+    const popupT = $('#popup-title');
+    const popupC = $('#popup-message');
+    const popupI = $('#popup-icon');
+    const popupB = $('#popup-button');
 
     /**
      * 页面切换函数
      * @param {string} page - 要切换到的页面ID
      */
     function switchPage(page) {
-        console.log('切换到页面:', page); // 调试信息
-        // 隐藏所有页面
+        console.log('切换到页面:', page);
         $('.page').removeClass('visible');
-        // 显示目标页面
         $('#' + page).addClass('visible');
-        // 移除所有导航链接的活动状态
         $('.nav-link').removeClass('active');
-        // 为当前页面的导航链接添加活动状态
         $('.nav-link[data-page="' + page + '"]').addClass('active');
-        // 滚动到页面顶部
         $('html, body').animate({ scrollTop: 0 }, 300);
     }
 
     /**
-     * 绑定导航点击事件
-     * 处理顶部导航和页脚导航的点击事件
+     * 显示弹窗
+     * @param {number} code - 弹窗类型代码
+     * @param {string} message - 弹窗内容
+     * @description 代码类型：
+     * 1: 成功
+     * 2: 错误
+     * 3: 警告
+     * 4: 信息
+     * default: 提示
      */
+    function showPopup(code,message) {
+        if (popup.css('display') !== 'none') {
+            popup.css('display', 'none');
+        }
+        console.log('show popup?code='+code+'&message='+message);
+        // 设置标题和图标
+        switch (code) {
+            case 1:
+                popupT.text('成功');
+                popupI.text('✅');
+                break;
+            case 2:
+                popupT.text('错误');
+                popupI.text('❌');
+                break;
+            case 3:
+                popupT.text('警告');
+                popupI.text('⚠️');
+                break;
+            case 4:
+                popupT.text('信息');
+                popupI.text('ℹ️');
+                break;
+            default:
+                popupT.text('提示');
+                popupI.text('');
+        }
+        popupC.text(message).fadeIn();
+        popup.css('display', 'flex');
+        console.log(`浮窗显示: 类型=${code}, 消息=${message}`);
+    }
+
+    popupB.click(function () {
+        popup.css('display', 'none');
+        popupC.text('').fadeOut();
+        popupT.text('');
+        popupI.text('');
+    });
+
     $('.nav-link, .nav-footer-link').on('click', function (e) {
-        e.preventDefault(); // 阻止默认跳转行为
-        const page = $(this).data('page'); // 获取目标页面ID
+        e.preventDefault();
+        const page = $(this).data('page');
         if (page) {
-            switchPage(page); // 切换到目标页面
+            switchPage(page);
         } else {
-            console.error('data-page 属性缺失:', $(this)); // 调试信息
+            console.error('data-page 属性缺失:', $(this));
         }
     });
 
-    /**
-     * 评论输入框输入事件
-     * 更新字符计数并在接近限制时改变颜色
-     */
-    $('#comments').on('input', function () {
-        var current = $(this).val().length; // 当前输入字符数
-        $('.char-count').text('(' + current + '/1000)').css('color', current > 900 ? '#e74c3c' : '#999');
+    // 合并重复的 input 事件
+    $textarea.on('input', function () {
+        const count = $(this).val().length;
+        $charCount.text(`(${count}/1000)`).css('color', count > 900 ? '#e74c3c' : '#999');
+        if (count > 0) $error.hide();
     });
 
-    /**
-     * 名称输入框输入事件
-     * 验证名称是否有效
-     */
-    $('#name').on('input', function () {
-        if ($(this).val().length < 1) {
-            $(this).nextAll('.error').show(); // 显示错误提示
+    titleInput.on('input', function () {
+        const val = $(this).val().trim();
+        if (val.length < 1) {
+            $(this).nextAll('.error').show();
         } else {
-            $(this).nextAll('.error').hide(); // 隐藏错误提示
+            $(this).nextAll('.error').hide();
         }
     });
 
-    /**
-     * 留言表单提交事件
-     * 处理表单数据并提交到服务器
-     */
-    $('.message-form').submit(function (e) {
-        e.preventDefault(); // 阻止默认提交行为
-        const $form = $(this);
-        // 获取表单数据
-        const name = $('#name').val().trim();
-        const contact = $('#contact').val().trim();
-        const comments = $('#comments').val().trim();
-
-        // 禁用提交按钮并显示加载状态
-        $('.submit-btn').prop('disabled', true).text('提交中...');
-        $('.loading').show();
-
-        // 发送AJAX请求提交表单
-        $.ajax({
-            url: '/api/message', // 请求URL
-            method: 'POST',      // 请求方法
-            data: { name, contact, comments }, // 表单数据
-            dataType: 'json',    // 预期返回数据类型
-            success: function (response) {
-                // 请求成功处理
-                if (response.success) {
-                    switchPage('success'); // 切换到成功页面
-                } else {
-                    alert('提交失败: ' + response.message); // 显示错误信息
-                }
-            },
-            error: function (xhr, status, error) {
-                // 请求失败处理
-                alert('提交失败，请稍后重试');
-            },
-            complete: function () {
-                // 请求完成，恢复按钮状态
-                $('.loading').hide();
-                $('.submit-btn').prop('disabled', false).text('提交留言');
-            }
-        });
-    });
-
-    /**
-     * 重置按钮点击事件
-     * 重置表单数据和状态
-     */
     $('.reset-btn').click(function () {
-        $('.message-form')[0].reset(); // 重置表单
-        $('.char-count').text('(0/1000)').css('color', '#999'); // 重置字符计数
-        $('.error').hide(); // 隐藏所有错误提示
+        $form[0].reset();
+        $charCount.text('(0/1000)').css('color', '#999');
+        $error.hide();
     });
 
-    /**
-     * 返回主页按钮点击事件
-     */
     $('.back-to-home').click(function (e) {
-        e.preventDefault(); // 阻止默认跳转行为
-        switchPage('home'); // 切换到主页
+        e.preventDefault();
+        switchPage('home');
     });
 
-    // 初始加载时切换到主页
+    // 表单提交
+    $form.on('submit', async function (e) {
+        e.preventDefault();
+
+        const name = titleInput.val().trim();
+        const comments = $textarea.val().trim();
+
+        console.log(name+'\n'+ comments);
+
+        // 前端验证
+        if (!name || !comments) {
+            $error.text('标题和内容不能为空');
+            $error.show();
+            return;
+        }
+        if (name.length > 255) {
+            $error.text('标题长度不能超过255个字符');
+            $error.show();
+            return;
+        }
+        if (comments.length > 1000) {
+            $error.text('留言内容长度不能超过1000个字符');
+            $error.show();
+            return;
+        }
+
+        try {
+            const response = await fetch('/api/message', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json',},
+                body: JSON.stringify({ name, comments })
+            });
+            const result = await response.json();
+            console.log('服务器返回结果:', result);
+            if (response.ok) {
+                showPopup(1, '留言提交成功');
+                $form[0].reset();
+                $charCount.text('(0/1000)').css('color', '#999');
+                $error.hide();
+            } else {
+                $error.text(`提交失败：${result.error}`).show();
+            }
+        } catch (error) {
+            $error.text('提交失败：网络错误').show();
+            console.error('错误:', error);
+        }
+    });
+
+    // 重置表单
+    $form.on('reset', function () {
+        $charCount.text('(0/1000)').css('color', '#999');
+        $error.hide();
+        $error.text('留言内容不能为空');
+    });
+
+    //初始化完成后切换到主页面
     switchPage('home');
 });
+
+const list = document.querySelector('.carousel');
+let idx = 0;
+const cardW = 280;
+setInterval(() => {
+    idx = (idx + 1) % list.children.length;
+    list.scrollTo({ left: idx * cardW, behavior: 'smooth' });
+}, 2500);
+
+const weekDay = new Date().getDay();
+const classTableDay = [
+    document.getElementsByClassName('week1'),
+    document.getElementsByClassName('week2'),
+    document.getElementsByClassName('week3'),
+    document.getElementsByClassName('week4'),
+    document.getElementsByClassName('week5')
+];
+
+if (weekDay >= 1 && weekDay <= 5) {
+    const elements = Array.prototype.slice.call(classTableDay[weekDay - 1]);
+    elements.forEach(function (item) {
+        if (item && item.style) {
+            item.style.background = '#ddd';
+        }
+    });
+}

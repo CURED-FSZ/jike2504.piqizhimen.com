@@ -3,11 +3,10 @@
    ========================================================================== */
 
 :root {
-  --primary-color: #699CF0;
-  --secondary-color: #f5f5f5;
-  --accent-color: #f5f5f5;
-  --text-color: #87CEFA;
-  --transition-speed: 0.3s;
+  --main-color: #699CF0;
+  --light-color: #87CEFA;
+  --dark-color: #3f78bf;
+  --transition-speed: 0.2s;
   --border-radius: 10px;
 }
 
@@ -22,7 +21,7 @@ body {
   font-family: 'Noto Sans SC', sans-serif;
   line-height: 1.6;
   color: black;
-  background-color: var(--secondary-color);
+  background-color: white;
   overflow-x: hidden;
   height: 100%;
 }

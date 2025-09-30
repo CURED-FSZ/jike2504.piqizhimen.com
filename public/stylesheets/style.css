@@ -1,4 +1,4 @@
-@import url('variables.css');
-@import url('layout.css');
-@import url('components.css');
-@import url('responsive.css');
+@import url('全局变量与重置.css');
+@import url('页面固定模块.css');
+@import url('通用组件.css');
+@import url('响应式设计.css');

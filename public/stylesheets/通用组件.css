@@ -1,4 +1,4 @@
-@import url('./variables.css');
+@import url('全局变量与重置.css');
 
 /* ==========================================================================
    通用组件样式
@@ -7,7 +7,7 @@
 h2 {
   font-size: 2rem;
   margin-bottom: 2rem;
-  color: var(--primary-color);
+  color: var(--main-color);
   position: relative;
   display: inline-block;
   font-weight: 600;
@@ -20,75 +20,29 @@ h2::after {
   height: 2px;
   bottom: -8px;
   left: 0;
-  background-color: var(--primary-color);
+  background-color: var(--main-color);
 }
 
 /* 卡片样式 */
 .welcome-card {
-  background-color: var(--secondary-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: var(--border-radius);
-  padding: 2rem;
+  padding: 1rem;
   margin-bottom: 2rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform var(--transition-speed), box-shadow var(--transition-speed);
 }
 
 .welcome-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* 搜索栏 */
-.search-bar {
-  display: flex;
-  margin-bottom: 2rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  height: 46px;
-  align-items: stretch;
-  position: relative;
-}
-
-.search-bar input {
-  flex: 1;
-  padding: 0.8rem 1rem;
-  border: 1px solid #ddd;
-  border-radius: var(--border-radius) 0 0 var(--border-radius);
-  font-family: inherit;
-  font-size: 1rem;
-  outline: none;
-  transition: border-color var(--transition-speed);
-  height: 100%;
-  border-right: none;
-}
-
-.search-btn {
-  padding: 0 1.5rem;
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-  border: none;
-  border-radius: 0 var(--border-radius) var(--border-radius) 0;
-  cursor: pointer;
-  transition: background-color var(--transition-speed);
-  font-family: inherit;
-  font-weight: 500;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.search-btn:hover {
-  background-color: #333;
 }
 
 /* 加载动画 */
 .loading {
   display: none;
   border: 4px solid #f3f3f3;
-  border-top: 4px solid var(--primary-color);
+  border-top: 4px solid var(--main-color);
   border-radius: 50%;
   width: 20px;
   height: 20px;
@@ -112,11 +66,14 @@ h2::after {
 .table-container {
   overflow-x: auto;
 }
+.table-container p{
+    font-size: 0.75rem;
+}
 
 table {
   width: 100%;
   border-collapse: collapse;
-  margin: 1rem 0;
+  margin: 0;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   border-radius: var(--border-radius);
   overflow: hidden;
@@ -124,14 +81,15 @@ table {
 
 th,
 td {
-  padding: 12px 15px;
+  padding: 10px 12px;
   text-align: center;
-  border: 1px solid #ddd;
+  border: 1px solid #aaa;
+
 }
 
 th {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
+  background-color: var(--main-color);
+  color: white;
   font-weight: 500;
 }
 
@@ -139,16 +97,12 @@ tr:nth-child(even) {
   background-color: #f9f9f9;
 }
 
-tr:hover {
-  background-color: #f1f1f1;
-}
-
 /* 按钮样式 */
 button,
 .AppsTable button {
   padding: 10px 20px;
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
+  background-color: var(--main-color);
+  color: white;
   border: none;
   border-radius: var(--border-radius);
   cursor: pointer;
@@ -159,7 +113,7 @@ button,
 
 button:hover,
 .AppsTable button:hover {
-  background-color: #333;
+  background-color: var(--dark-color);
   transform: translateY(-2px);
 }
 
@@ -184,10 +138,6 @@ button:hover,
 .message-container {
   max-width: 600px;
   margin: 0 auto;
-  padding: 2rem;
-  background-color: var(--secondary-color);
-  border-radius: var(--border-radius);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .message-description {
@@ -211,7 +161,7 @@ button:hover,
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 500;
-  color: var(--primary-color);
+  color: var(--main-color);
 }
 
 .char-count {
@@ -251,7 +201,7 @@ button:hover,
   left: 0;
   width: 0;
   height: 2px;
-  background-color: var(--primary-color);
+  background-color: var(--main-color);
   transition: width var(--transition-speed);
 }
 
@@ -273,8 +223,8 @@ button:hover,
 }
 
 .submit-btn {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
+  background-color: var(--main-color);
+  color: white;
   flex: 1;
   margin-right: 0.5rem;
 }
@@ -293,22 +243,119 @@ button:hover,
 
 /* 特性卡片 */
 .feature-item {
-  text-align: center;
-  padding: 1.5rem;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: var(--border-radius);
-  transition: all var(--transition-speed) ease;
-  background-color: var(--secondary-color);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  margin: 0 0.5rem;
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: var(--border-radius);
+    transition: all var(--transition-speed) ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    margin: 0 0.5rem;
 }
 
 .feature-item:hover {
-  border-color: var(--primary-color);
+  border-color: var(--main-color);
   transform: translateY(-5px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 .feature-item h3 {
-  color: var(--primary-color);
+  color: var(--main-color);
+}
+
+/* 团队成员卡片 */
+.person-table{
+    border:none;
+}
+
+.person-table tr{
+    border:none;
+    display: flex;
+    flex-wrap: wrap;        /* 自动折行 */
+    justify-content: center; /* 行内剩余空间平均分配到左右 → 整体居中 */
+}
+
+.person-table td{
+    border:none;
+    flex: 0 0 155px;        /* 基础 200px，空间不够就等比缩小 */
+    box-sizing: border-box;
+}
+
+.person-card{
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    transition: all var(--transition-speed) ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    margin: 0;
+    background-color: white;
+}
+.person-card:hover {
+    border-color: var(--main-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+.person-card a{
+    color: black;
+    text-decoration: none;
+}
+.person-card h3{
+    font-size: 0.95rem;
+    color:  var(--main-color);
+    user-select: none;
+}
+
+/* 轮播图 */
+.carousel-wrapper{
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;   /* 一滑一卡片 */
+}
+.carousel{
+    display:flex;
+    gap:20px;
+    padding:0 20px;
+}
+.carousel.dragging{animation:none;}   /* 拖拽时停止动画 */
+@keyframes heroScroll{
+    0%{transform:translateX(0);}
+    100%{transform:translateX(-50%);}   /* 只走一半就无缝 */
+}
+.card{
+    user-select: none;
+    width: auto;
+    height:320px;
+    scroll-snap-align:start;
+    border-radius:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:26px;
+    background-color: white;
+}
+/* 隐藏滚动条（可选） */
+.carousel-wrapper::-webkit-scrollbar{display:none;}
+
+/* 课程卡片*/
+.class-card {
+    text-align: center;
+    padding: 0.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    transition: all var(--transition-speed) ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    margin: 0;
+    user-select: none;
+    background-color: white;
+}
+.class-card:hover {
+    border-color: var(--main-color);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+.class-card a{
+    color: var(--main-color);
+    text-decoration: none;
+}
+.class-card a p{
+    color: black;
 }
