@@ -45,7 +45,7 @@
 4. **启动服务器**：
    ```bash
    #在控制台运行以下命令
-   npm ./bin/www
+   node ./bin/www
    ```
    - 在浏览器里访问 `http://localhost:4000`即可预览效果。
   
