@@ -42,28 +42,14 @@
    npm install
    ```
 
-3. **配置数据库**：
-   - 创建 MySQL 数据库（默认：`test` 或 `.env` 中的 `DB_NAME`）。
-   - 运行 SQL 创建表（示例：`comments` 表）：
-     ```sql
-     CREATE TABLE comments (
-         id INT AUTO_INCREMENT PRIMARY KEY,
-         title VARCHAR(255) NOT NULL,
-         content TEXT NOT NULL,
-         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-     );
-     ```
-
 4. **启动服务器**：
    ```bash
    #在控制台运行以下命令
    npm ./bin/www
    ```
-   - 在浏览器里访问 `http://localhost:4000`。
-   - 留言测试：POST `/api/message` { "name": "标题", "comments": "内容" }。
+   - 在浏览器里访问 `http://localhost:4000`即可预览效果。
   
-   - *注意：*
-   - 当您在本地环境运行该项目时，某些（大部分）api接口将不可用！
+   - *注意：*当您在本地环境运行该项目时，某些（大部分）api接口将不可用！
 
 ### 开发模式
 ```bash
