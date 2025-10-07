@@ -42,7 +42,7 @@ class MYSQL {
      * // 使用自定义配置初始化
      * await db.init({
      *   host: '127.0.0.1',
-     *   user: 'myuser',
+     *   user: 'my_user',
      *   password: 'mypassword',
      *   database: 'mydb'
      * });
