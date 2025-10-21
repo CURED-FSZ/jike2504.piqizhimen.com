@@ -1,99 +1,191 @@
-@import url('全局变量与重置.css');
-@import url('页面固定模块.css');
-@import url('通用组件.css');
-
 /* ==========================================================================
-   响应式设计
+   响应式设计 - 优化版
    ========================================================================== */
 
+/* 移动端优先的响应式设计 */
 @media (max-width: 768px) {
+    /* 导航栏优化 */
     .navigation {
-        background-color: var(--main-color);
-        color: white;
-        position: absolute;
-        width: 100%;
+        position: relative;
     }
 
     .top {
         display: block;
         height: auto;
+        width: 95%;
+        margin: 10px auto 0;
     }
 
-  .top-left {
-      width: 100%;
-      min-width: 100px;
-      max-width: 400px;
-      height: auto;
-  }
+    .top-left {
+        width: 100%;
+        min-width: 100px;
+        max-width: 400px;
+        height: auto;
+        margin: 0 auto;
+    }
 
     .header {
         padding: 15px;
         text-align: center;
         align-items: center;
-        transition: padding 0.3s ease;
     }
 
-  .header h1 {
-    font-size: 1.8rem;
-  }
+    .header h1 {
+        font-size: clamp(1.5rem, 6vw, 1.8rem);
+    }
 
-  .nav-link {
-    padding: 8px 12px;
-    font-size: 0.8rem;
-  }
+    .nav-menu {
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
 
-  .content {
-    padding: 150px 5px 40px;
-  }
+    .nav-item {
+        margin: 0;
+        width: 100%;
+    }
 
-  .page{
-      padding: 80px 0 0 0;
-  }
+    .nav-link {
+        display: block;
+        text-align: center;
+        border-radius: var(--border-radius);
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+
+    .nav-link::after {
+        display: none; /* 移动端隐藏下划线动画 */
+    }
+
+    /* 内容区域优化 */
+    .content {
+        padding: 110px 5px 40px;
+    }
+
+    .page {
+        padding: 80px 0 0 0;
+    }
 
     .page.visible {
         transform: translateY(60px);
     }
 
-  h2 {
-    font-size: 1.4rem;
-  }
+    /* 排版优化 */
+    h2 {
+        font-size: clamp(1.3rem, 5vw, 1.4rem);
+        margin-bottom: 1.5rem;
+    }
 
-  table {
-    font-size: 0.9rem;
-  }
+    /* 表格优化 */
+    .table {
+        font-size: 0.9rem;
+    }
 
-  th,
-  td {
-    padding: 8px 10px;
-  }
+    .table th,
+    .table td {
+        padding: 8px 10px;
+    }
 
-  .message-container {
-    padding: 1.5rem;
-  }
+    .table-container::before {
+        display: block;
+        text-align: center;
+        color: #bbb;
+        margin-bottom: 0.3rem;
+    }
 
-  .form-actions {
-    flex-direction: column;
-    gap: 0.8rem;
-  }
+    .table-container p {
+        font-size: 0.65rem;
+    }
 
-  .submit-btn,
-  .reset-btn {
-    margin: 0;
-    width: 100%;
-  }
+    /* 表单优化 */
+    .message-container {
+        padding: 1.5rem;
+    }
 
-  .reset-btn.resetting {
-    transform: rotate(360deg);
-    transition: transform 0.5s ease;
-  }
+    .form-actions {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
 
-  .table-container::before {
-    display: block;
-    text-align: center;
-    color: #bbb;
-    margin-bottom: 0.3rem;
-  }
-  .table-container p{
-      font-size: 0.65rem;
-  }
+    .submit-btn,
+    .reset-btn {
+        margin: 0;
+        width: 100%;
+    }
+
+    /* 卡片布局优化 */
+    .person-table td {
+        flex: 0 0 calc(50% - 1rem); /* 两列布局 */
+    }
+
+    /* 轮播图优化 */
+    .rolling_img {
+        height: 320px;
+        font-size: 1.5rem;
+    }
+
+    .carousel {
+        gap: 15px;
+        padding: 0 15px;
+    }
+
+    /* 按钮触摸优化 */
+    .btn {
+        min-height: 48px; /* 移动端更大的触摸目标 */
+    }
+}
+
+/* 平板设备优化 */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .top {
+        width: 90%;
+    }
+
+    .content {
+        padding: 140px 20px 50px;
+    }
+
+    .person-table td {
+        flex: 0 0 calc(33.333% - 1rem); /* 三列布局 */
+    }
+
+    .rolling_img {
+        height: 380px;
+    }
+}
+
+/* 大屏幕优化 */
+@media (min-width: 1200px) {
+    .content {
+        padding: 160px 0 60px;
+    }
+}
+
+/* 高对比度模式支持 */
+@media (prefers-contrast: high) {
+    :root {
+        --border-color: #000;
+        --shadow-color: rgba(0, 0, 0, 0.3);
+    }
+
+    .card {
+        border-width: 2px;
+    }
+}
+
+/* 减少动画模式支持 */
+@media (prefers-reduced-motion: reduce) {
+    .page {
+        transition: opacity 0.4s ease;
+        transform: none;
+    }
+
+    .page.visible {
+        transform: none;
+    }
+
+    .card:hover,
+    .btn:hover {
+        transform: none;
+    }
 }

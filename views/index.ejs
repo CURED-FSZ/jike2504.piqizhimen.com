@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="为西邮计科2504班级提供的网站">
     <link rel="shortcut icon" href="../images/favicon.png">
-    <title>
-        西邮计科2504
-    </title>
+    <title> 西邮计科2504 </title>
     <link rel="stylesheet" href="../stylesheets/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
@@ -17,7 +14,7 @@
 <nav class="navigation">
     <div class="top">
         <img class=top-left src="../images/校名校徽.png" alt="">
-        <h1 class="header">计科2504班级网站(试做)</h1>
+        <h1 class="header">计科2504班级网站</h1>
     </div>
     <ul>
         <li data-page="home" class="nav-link active">班级视窗</li>
@@ -26,32 +23,30 @@
         <li data-page="feedback" class="nav-link">匿名反馈</li>
     </ul>
 </nav>
-
 <!-- 主要内容区域 -->
 <div class="content">
     <!-- 班级视窗 -->
     <div id="home" class="page visible">
-        <div class="welcome-card">
+        <div class="platform">
             <h2>欢迎来到计科2504</h2>
-            <p>这是一个试验性质的网站，我们正在不断改进和完善功能。</p>
             <div class="carousel-wrapper">
                 <ul class="carousel">
-                    <li class="card">
-                        <img src="../images/sucai.png" alt="">
+                    <li>
+                        <img class="rolling_img" src="../images/sucai.png" alt="">
                     </li>
-                    <li class="card">
-                        <img src="../images/sucai.png" alt="">
+                    <li>
+                        <img class="rolling_img" src="../images/sucai.png" alt="">
                     </li>
-                    <li class="card">
-                        <img src="../images/sucai.png" alt="">
+                    <li>
+                        <img class="rolling_img" src="../images/sucai.png" alt="">
                     </li>
-                    <li class="card">
-                        <img src="../images/sucai.png" alt="">
+                    <li>
+                        <img class="rolling_img" src="../images/sucai.png" alt="">
                     </li>
                 </ul>
             </div>
         </div>
-        <div class="welcome-card">
+        <div class="platform">
             <h2>课程表</h2>
             <div class="table-container">
                 <table>
@@ -67,42 +62,91 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td><h4>1~2</h4><p>8:00~9:45</p></td>
-                        <td class="week1"><div class="class-card"><a href="../htmls/高等数学A1.html" target="_blank">高等数学A1<p>A417</p></a></div></td>
+                        <td>
+                            <h4>1~2</h4>
+                            <p>8:00~9:45</p>
+                        </td>
+                        <td class="week1">
+                            <div class="class-card"><a href="../htmls/高等数学A1.html" target="_blank">高等数学A1<p>A417</p></a></div>
+                        </td>
                         <td class="week2"></td>
-                        <td class="week3"><div class="class-card"><a href="../htmls/高等数学A1.html" target="_blank">高等数学A1</a><p>A417</p></div></td>
-                        <td class="week4"><div class="class-card">计算机科学导论<p>A417</p></div></td>
+                        <td class="week3">
+                            <div class="class-card"><a href="../htmls/高等数学A1.html" target="_blank">高等数学A1</a>
+                                <p>A417</p>
+                            </div>
+                        </td>
+                        <td class="week4">
+                            <div class="class-card">计算机科学导论<p>A417</p>
+                            </div>
+                        </td>
                         <td class="week5"></td>
                     </tr>
                     <tr>
-                        <td><h4>3~4</h4><p>10:15~12:00</p></td>
-                        <td class="week1"><div class="class-card">中国近现代史纲要<p>A417</p></div></td>
-                        <td class="week2"><div class="class-card">C语言实践与提高<p>FF701</p></div></td>
-                        <td class="week3"><div class="class-card">大学生安全教育<p>A417</p></div></td>
-                        <td class="week4">
-                            <div class="class-card">大学生职业生涯规划 (双)<p>A417</p></div>
-                            <div class="class-card">C语言实践与提高 (单)<p>FF701</p></div>
+                        <td>
+                            <h4>3~4</h4>
+                            <p>10:15~12:00</p>
                         </td>
-                        <td class="week5"><div class="class-card">高等数学A1<p>A417</p></div></td>
+                        <td class="week1">
+                            <div class="class-card">中国近现代史纲要<p>A417</p>
+                            </div>
+                        </td>
+                        <td class="week2">
+                            <div class="class-card">C语言实践与提高<p>FF701</p>
+                            </div>
+                        </td>
+                        <td class="week3">
+                            <div class="class-card">大学生安全教育<p>A417</p>
+                            </div>
+                        </td>
+                        <td class="week4">
+                            <div class="class-card">大学生职业生涯规划 (双)<p>A417</p>
+                            </div>
+                            <div class="class-card">C语言实践与提高 (单)<p>FF701</p>
+                            </div>
+                        </td>
+                        <td class="week5">
+                            <div class="class-card">高等数学A1<p>A417</p>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
-                        <td><h4>5~6</h4><p>14:30~16:15</p></td>
+                        <td>
+                            <h4>5~6</h4>
+                            <p>14:30~16:15</p>
+                        </td>
                         <td class="week1"></td>
-                        <td class="week2"><div class="class-card">大学体育1</div></td>
-                        <td class="week3"><div class="class-card">大学英语C1 (单)<p>A716</p></div></td>
+                        <td class="week2">
+                            <div class="class-card">大学体育1</div>
+                        </td>
+                        <td class="week3">
+                            <div class="class-card">大学英语C1 (单)<p>A716</p>
+                            </div>
+                        </td>
                         <td class="week4"></td>
-                        <td class="week5"><div class="class-card">大学英语C1<p>233</p></div></td>
+                        <td class="week5">
+                            <div class="class-card">大学英语C1<p>233</p>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
-                        <td><h4>7~8</h4><p>16:35~18:20</p></td>
+                        <td>
+                            <h4>7~8</h4>
+                            <p>16:35~18:20</p>
+                        </td>
                         <td class="week1"></td>
-                        <td class="week2"><div class="class-card">大学美育 (9~18周)<p>A405</p></div></td>
+                        <td class="week2">
+                            <div class="class-card">大学美育 (9~18周)<p>A405</p>
+                            </div>
+                        </td>
                         <td class="week3"></td>
                         <td class="week4"></td>
                         <td class="week5"></td>
                     </tr>
                     <tr>
-                        <td><h4>9~11</h4><p>19:00~21:50</p></td>
+                        <td>
+                            <h4>9~11</h4>
+                            <p>19:00~21:50</p>
+                        </td>
                         <td class="week1">自习</td>
                         <td class="week2">自习</td>
                         <td class="week3">自习</td>
@@ -113,7 +157,7 @@
                 </table>
             </div>
         </div>
-        <div class="welcome-card">
+        <div class="platform">
             <h2>我们的成员</h2>
             <div style="display: flex; justify-content: center">
                 <div>
@@ -331,10 +375,9 @@
             </div>
         </div>
     </div>
-
     <!-- 管理公开页面 -->
     <div id="manage" class="page hidden">
-        <div class="welcome-card">
+        <div class="platform">
             <h2>班费公开</h2>
             <p>再此公开班费动向</p>
             <div class="features" style="display: flex; justify-content: space-around; margin-top: 2rem;">
@@ -344,7 +387,7 @@
                 </div>
             </div>
         </div>
-        <div class="welcome-card">
+        <div class="platform">
             <h2>投票活动</h2>
             <div class="features" style="display: flex; justify-content: space-around; margin-top: 2rem;">
                 <div class="feature-item">
@@ -361,7 +404,7 @@
                 </div>
             </div>
         </div>
-        <div class="welcome-card">
+        <div class="platform">
             <h2>班务公开</h2>
             <div class="features" style="display: flex; justify-content: space-around; margin-top: 2rem;">
                 <div class="feature-item">
@@ -371,10 +414,9 @@
             </div>
         </div>
     </div>
-
     <!-- 重要事项 -->
     <div id="important" class="page hidden">
-        <div class="welcome-card">
+        <div class="platform">
             <h2>重要事项</h2>
             <div class="table-container">
                 <table>
@@ -388,50 +430,31 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td>
-                            03
-                        </td>
-                        <td>
-                            老师要求早自习不迟到
-                        </td>
+                        <td> 03 </td>
+                        <td> 老师要求早自习不迟到 </td>
                         <td>无</td>
-                        <td>
-                            2025.13.35
-                        </td>
+                        <td> 2025.13.35 </td>
                     </tr>
                     <tr>
-                        <td>
-                            02
-                        </td>
-                        <td>
-                            老师发的的C语言课件，都可以下载下载
-                        </td>
+                        <td> 02 </td>
+                        <td> 老师发的的C语言课件，都可以下载下载 </td>
                         <td>（C语言课件.pdf）</td>
-                        <td>
-                            2025.9.31
-                        </td>
+                        <td> 2025.9.31 </td>
                     </tr>
                     <tr>
-                        <td>
-                            01
-                        </td>
-                        <td>
-                            嗨嗨嗨，我们来辣！
-                        </td>
+                        <td> 01 </td>
+                        <td> 嗨嗨嗨，我们来辣！ </td>
                         <td>无</td>
-                        <td>
-                            2025.8.31
-                        </td>
+                        <td> 2025.8.31 </td>
                     </tr>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-
     <!-- 留言页 -->
     <div id="feedback" class="page hidden">
-        <div class="welcome-card">
+        <div class="platform">
             <div class="message-container">
                 <h2>匿名反馈</h2>
                 <p class="message-description">我们重视您的每一条反馈，但机能有限，请不要发送垃圾信息</p>
@@ -473,14 +496,11 @@
         <p>&nbsp;</p>
         <p>&nbsp;</p>
         <p>友情链接：</p>
-        <p><a href="https://www.xiyou.edu.cn/" target="_blank">西安邮电大学官方网站</a>&nbsp;&nbsp;&nbsp;
-            <a href="http://cs.xupt.edu.cn:81/xiyoucs/index.asp" target="_blank">西安邮电大学计算机学院</a>&nbsp;&nbsp;&nbsp;
-            <a href="https://wiki.cooo.site/" target="_blank">西安邮电大学wiki百科</a>
+        <p><a href="https://www.xiyou.edu.cn/" target="_blank">西安邮电大学官方网站</a>&nbsp;&nbsp;&nbsp; <a href="http://cs.xupt.edu.cn:81/xiyoucs/index.asp" target="_blank">西安邮电大学计算机学院</a>&nbsp;&nbsp;&nbsp; <a href="https://wiki.cooo.site/" target="_blank">西安邮电大学wiki百科</a>
         </p>
     </div>
 </footer>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="../javascripts/main.js"></script>
-
 </body>
 </html>

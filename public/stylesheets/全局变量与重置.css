@@ -1,27 +1,87 @@
 /* ==========================================================================
-   全局变量与重置
+   全局变量与重置 - 优化版
    ========================================================================== */
 
 :root {
-  --main-color: #699CF0;
-  --light-color: #87CEFA;
-  --dark-color: #3f78bf;
-  --transition-speed: 0.2s;
-  --border-radius: 10px;
+    /* 主色调 */
+    --main-color: #699CF0;
+    --light-color: #87CEFA;
+    --dark-color: #3f78bf;
+
+    /* 语义化颜色 */
+    --text-color: black;
+    --bg-color: white;
+    --border-color: rgba(0, 0, 0, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.1);
+
+    /* 功能色 */
+    --error-color: #e74c3c;
+    --success-color: #2ecc71;
+    --warning-color: #f39c12;
+
+    /* 间距和尺寸 */
+    --border-radius: 10px;
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+
+    /* 过渡和动画 */
+    --transition-speed: 0.2s;
+    --transition-slow: 0.5s;
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+
+    /* 阴影系统 */
+    --shadow-light: 0 2px 4px var(--shadow-color);
+    --shadow-medium: 0 4px 6px var(--shadow-color);
+    --shadow-heavy: 0 10px 20px var(--shadow-color);
+
+    /* 响应式断点 */
+    --breakpoint-mobile: 768px;
+    --breakpoint-tablet: 1024px;
 }
 
 /* 重置默认样式 */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Noto Sans SC', sans-serif;
-  line-height: 1.6;
-  color: black;
-  background-color: white;
-  overflow-x: hidden;
-  height: 100%;
+    font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* 可选中元素的优化选择 */
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+/* 减少动画对偏好减少动画用户的影响 */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }

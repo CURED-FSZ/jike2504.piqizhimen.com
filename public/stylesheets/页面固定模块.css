@@ -107,7 +107,7 @@
 .page.visible {
   opacity: 1;
   display: block;
-  transform: translateY(50px);
+  transform: translateY(40px);
   position: relative;
   top: auto;
 }
